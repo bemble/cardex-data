@@ -1,0 +1,17 @@
+{
+  "name": "cardex-data",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "fill:readme": "npx embedme README.md",
+    "start": "tsx src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tcgdex/sdk": "^2.6.0",
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3"
+  }
+}
