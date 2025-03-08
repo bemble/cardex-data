@@ -78,7 +78,7 @@ export class Database {
         this.series[id] = {
           id,
           info: {
-            en: { name, logo: `${logo}.png` },
+            en: { name, logo: logo ? `${logo}.png` : null },
           },
         };
         for (const lang of LANGS) {
@@ -87,7 +87,10 @@ export class Database {
           for (let serie of series) {
             const { id, name, logo } = serie;
             if (this.series[id]) {
-              this.series[id].info[lang] = { name, logo: `${logo}.png` };
+              this.series[id].info[lang] = {
+                name,
+                logo: logo ? `${logo}.png` : null,
+              };
             }
           }
         }
