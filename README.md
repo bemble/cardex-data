@@ -127,7 +127,7 @@ export type Set = {
 export type Sets = Record<SetId, Set>;
 ```
 
-### `card_<set_id>.json`
+### `cards_<set_id>.json`
 
 > Map of cards in the set.
 
