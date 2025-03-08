@@ -40,7 +40,8 @@ jobs:
       - name: Run get data
         run: npm run start
 
-      - uses: jakejarvis/s3-sync-action@master
+      - name: Upload data to bucket
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
