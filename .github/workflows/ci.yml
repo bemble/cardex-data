@@ -39,3 +39,15 @@ jobs:
 
       - name: Run get data
         run: npm run start
+
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_ENDPOINT: ${{ secrets.CF_BUCKET_ENDPOINT }}
+          AWS_S3_BUCKET: ${{ secrets.CF_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.CF_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CF_SECRET_ACCESS_KEY }}
+          AWS_REGION: "auto"
+          DEST_DIR: "data"
+          SOURCE_DIR: "data"
